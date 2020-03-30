@@ -9,7 +9,7 @@ from flask import request, current_app, g
 from flask_httpauth import HTTPBasicAuth
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import BadSignature, SignatureExpired
-from models.user import APIToken
+from models.user import APIToken, UserProfile
 from libs.error_code import APIAuthorizedException
 
 # 创建auth方法
@@ -40,6 +40,8 @@ def verify_password(token, password):
     elif token:
         # 如果只有token，进行token认证
         data = verify_token(token)
+        role = UserProfile.query.get(data.get("uid")).role
+        has_permission(role)
         g.user = data
         return True
         # raise APIAuthorizedException(message="这是token认证")
@@ -47,14 +49,18 @@ def verify_password(token, password):
         raise APIAuthorizedException(message="参数传递不完整")
 
 
-def has_permission(api_token, url, method):
+def has_permission(role_or_apitoken):
     """权限该api是否有指定url和指定方法的权限"""
     # 从服务端查找appid及对应的秘钥
+    # request线程隔离的
+    url = request.path
+    method = request.method
     mypermission = method+url
-    all_permissions = [permission.api_permission_method_type.name+permission.api_permission_url for permission in api_token.permissions]
+    all_permissions = [permission.api_permission_method_type.name+permission.api_permission_url for permission in role_or_apitoken.permissions]
     if mypermission not in all_permissions:
         raise APIAuthorizedException(message="没有当前接口的权限")
     return True
+
 
 
 def api_authorize():
@@ -69,7 +75,7 @@ def api_authorize():
     api_token = APIToken.query.filter_by(api_token_appid=appid).first()
     if not api_token:
         raise APIAuthorizedException(message="认证失败！没有查找到api_token")
-    has_permission(api_token, url=request.path, method=request.method)
+    has_permission(api_token)
     user_appid = api_token.api_token_appid
     user_secretkey = api_token.api_token_secretkey
     user_sign = user_appid+salt+user_secretkey

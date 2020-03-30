@@ -6,10 +6,10 @@
 """
 
 # 配置消息中间件的地址
-BROKER_URL = "redis://192.168.189.200:6379/1"
+BROKER_URL = "redis://127.0.0.1:6379/1"
 
 # 结果存放地址
-CELERY_RESULT_BACKEND = "redis://192.168.189.200:6379/2"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/2"
 
 # 启动Celery时，导入任务
 CELERY_IMPORTS = (

@@ -14,11 +14,11 @@ ENV = "development"
 # DB配置
 # uri统一资源匹配符
 # SQLALCHEMY_DATABASE_URI配置数据库连接的参数
-SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:123456@127.0.0.1:3306/school?charset=utf8'
+SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:123456@127.0.0.1:3306/operbench?charset=utf8'
 # 请求结束后自动提交数据库修改
 SQLALCHEMY_COMMMIT_ON_TEARDOWN = True
 # 如果设置成 True (默认情况)，Flask-SQLAlchemy	将会追踪对象的修改并且发送信号。这需要额外的内存， 如果不必要的可以禁用它。
-
+QLALCHEMY_TRACK_MODIFICATIONS = True
 
 SECRET_KEY = "this is a secret key"
 

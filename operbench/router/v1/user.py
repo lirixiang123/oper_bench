@@ -16,7 +16,7 @@ from serializer.user import user_schema
 from libs.error_code import ArgsTypeException
 from libs.authorize import create_token, auth
 
-user_bp = Blueprint('user', __name__, url_prefix='/user/')
+user_bp = Blueprint('user', __name__, url_prefix='/user')
 api = Api(user_bp)
 # 设置当出现异常时的标准化输出
 api.handle_error = default_error_handler

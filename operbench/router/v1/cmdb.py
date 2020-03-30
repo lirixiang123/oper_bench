@@ -15,8 +15,8 @@ from serializer.cmdb import idcs_schema, idc_schema
 from libs.handler import default_error_handler
 from libs.authorize import api_authorize, auth
 from sqlalchemy import or_
-
-cmdb_bp = Blueprint('cmdb', __name__, url_prefix='/cmdb/')
+import logging
+cmdb_bp = Blueprint('cmdb', __name__, url_prefix='/cmdb')
 # 创建一个restfulAPI
 api = Api(cmdb_bp)
 
@@ -25,6 +25,7 @@ api = Api(cmdb_bp)
 
 @cmdb_bp.route('/')
 def index():
+    logging.info("user访问了index页面,可以写到装饰器中")
     return "/v1/cmdb/"
 
 # 使用restful-api来进行接口开发

@@ -22,6 +22,8 @@ class UserProfile(db.Model):
     _password = db.Column("password", db.String(128))
     api_tokens = db.relationship("APIToken", backref="user_profile")
     tasklogs = db.relationship("TaskLog", backref="user_profile")
+    role_id = db.Column(db.ForeignKey("role.role_id"))
+
     note = db.Column(db.Text)
     create_at = db.Column(db.DateTime())
     update_at = db.Column(db.DateTime())
@@ -79,3 +81,22 @@ class APIPermission(db.Model):
     create_at = db.Column(db.DateTime())
     update_at = db.Column(db.DateTime())
     status = db.Column(db.Integer())
+
+
+
+
+
+role_permissions = db.Table("role_permissions",
+                            db.Column("role_id", db.ForeignKey("role.role_id")),
+                            db.Column("api_permission_id", db.ForeignKey("api_permission.api_permission_id")),
+                            )
+
+
+class Role(db.Model):
+    __tablename__ = "role"
+    role_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    role_name = db.Column(db.String(64))
+    users = db.relationship("UserProfile", backref="role")
+    permissions = db.relationship("APIPermission",
+                                  secondary=role_permissions,
+                                  backref="roles")

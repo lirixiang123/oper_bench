@@ -18,7 +18,7 @@ from celery_app.tasks import rum_cmd
 from celery.result import AsyncResult
 from celery_app import celery
 
-ops_tools_bp = Blueprint('ops_tools', __name__, url_prefix='/ops_tools/')
+ops_tools_bp = Blueprint('ops_tools', __name__, url_prefix='/ops_tools')
 api = Api(ops_tools_bp)
 # 设置当出现异常时的标准化输出
 # api.handle_error = default_error_handler

@@ -20,7 +20,7 @@ class StatusType(enum.Enum):
     MAINTAIN = 4
 
 class DiskIfaceType(enum.Enum):
-    pass
+    Disk = 0
 
 
 class MethodType(enum.Enum):

@@ -48,6 +48,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1YxfiUqpb51e9uxvgL8JCFiQLjp" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql&#10;sqlite" />
@@ -91,7 +94,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -143,7 +146,7 @@
       <workItem from="1585128730940" duration="14407000" />
       <workItem from="1585366133940" duration="7351000" />
       <workItem from="1585469354307" duration="9247000" />
-      <workItem from="1585535654462" duration="3563000" />
+      <workItem from="1585535654462" duration="4040000" />
     </task>
     <servers />
   </component>

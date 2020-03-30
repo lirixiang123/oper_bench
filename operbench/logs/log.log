@@ -1,0 +1,8 @@
+INFO _internal.py: 122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py: 122 127.0.0.1 - - [30/Mar/2020 11:14:19] "GET /api/v1/cmdb/ HTTP/1.1" 200 -
+INFO _internal.py: 122 127.0.0.1 - - [30/Mar/2020 11:14:36] "GET /api/v1/cmdb/ HTTP/1.1" 200 -
+INFO _internal.py: 122 127.0.0.1 - - [30/Mar/2020 11:14:41] "OPTIONS /api/v1/user/ HTTP/1.1" 200 -
+INFO _internal.py: 122 127.0.0.1 - - [30/Mar/2020 11:14:42] "GET /api/v1/user/ HTTP/1.1" 200 -
+INFO _internal.py: 122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO cmdb.py: 32 user访问了index页面=>可以写到装饰器中
+INFO _internal.py: 122 127.0.0.1 - - [30/Mar/2020 11:28:23] "GET /api/v1/cmdb/ HTTP/1.1" 200 -

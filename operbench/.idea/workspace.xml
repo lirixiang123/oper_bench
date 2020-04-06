@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ba427e78-358c-4d5e-8ff6-61f50a21912e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.log" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +56,7 @@
     <property name="DatabaseDriversLRU" value="sqlite&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="LESS" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/iview-admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -161,7 +159,8 @@
       <workItem from="1585535654462" duration="4040000" />
       <workItem from="1585552975732" duration="394000" />
       <workItem from="1585557980040" duration="789000" />
-      <workItem from="1585559009337" duration="5915000" />
+      <workItem from="1585559009337" duration="6025000" />
+      <workItem from="1585740582315" duration="74000" />
     </task>
     <servers />
   </component>
